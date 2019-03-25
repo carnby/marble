@@ -11,7 +11,7 @@ import itertools
 import networkx as nx
 
 import marble as mb
-from common import (regroup_per_class,
+from .common import (regroup_per_class,
                    return_categories,
                    compute_totals)
 

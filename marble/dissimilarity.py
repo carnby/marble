@@ -7,7 +7,7 @@ from __future__ import division
 import collections
 import itertools
 
-from common import (regroup_per_class,
+from .common import (regroup_per_class,
                    return_categories,
                    compute_totals)
 
@@ -25,7 +25,7 @@ __all__ = ['dissimilarity']
 def _pair_dissimilarity(distribution, N_class, alpha, beta):
     return 0.5*sum([ abs( dist[alpha] / N_class[alpha] - 
                           dist[beta] / N_class[beta] )
-                    for t,dist in distribution.iteritems()])
+                    for t,dist in distribution.items()])
 
 
 #

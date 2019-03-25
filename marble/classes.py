@@ -9,7 +9,7 @@ import copy
 import math
 import csv
 
-from common import (compute_totals,
+from .common import (compute_totals,
                     return_categories)
 
 

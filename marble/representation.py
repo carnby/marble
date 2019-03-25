@@ -9,7 +9,7 @@ See [Louf:2015]_ for the definition of the different quantities
 from __future__ import division
 
 import marble as mb
-from common import (regroup_per_class,
+from .common import (regroup_per_class,
                    return_categories,
                    compute_totals)
 
@@ -104,7 +104,7 @@ def concentration(distribution, classes=None):
     concentration = {au:{cl:single_concentration(dist_au[cl],
                                                    N_class[cl])
                              for cl in classes}
-                      for au, dist_au in distribution.iteritems()}
+                      for au, dist_au in distribution.items()}
     
     return concentration
 
@@ -202,6 +202,6 @@ def representation(distribution, classes=None):
                                                N_class[cl],
                                                N_tot) 
                              ) for cl in classes}
-                      for au, dist_au in distribution.iteritems()}
+                      for au, dist_au in distribution.items()}
     
     return representation

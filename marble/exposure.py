@@ -9,7 +9,7 @@ import collections
 import itertools
 
 import marble as mb
-from common import (regroup_per_class,
+from .common import (regroup_per_class,
                    return_categories,
                    compute_totals)
 
@@ -137,8 +137,8 @@ def exposure(distribution, classes=None):
                                  pair_variance(representation, N_unit, N_class, N_tot, alpha, beta))
 
     # Symmetrize the output
-    for c0 in exposure.iterkeys():
-        for c1 in exposure[c0].iterkeys():
+    for c0 in exposure.keys():
+        for c1 in exposure[c0].keys():
             if c0 not in exposure[c1]:
                 exposure[c1][c0] = exposure[c0][c1]
 

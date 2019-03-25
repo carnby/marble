@@ -45,8 +45,8 @@ def regroup_per_class(distribution, classes):
     ## Regroup
     try:
         new_distribution =  {au: {cl: sum([dist_au[c] for c in composition]) 
-                                  for cl,composition in classes.iteritems()}
-                             for au, dist_au in distribution.iteritems()}
+                                  for cl,composition in classes.items()}
+                             for au, dist_au in distribution.items()}
 
     except KeyError:
         raise KeyError("Verify that the categories specified in the class"
@@ -59,7 +59,8 @@ def regroup_per_class(distribution, classes):
 
 def return_categories(distribution):
     "Return the categories in the original data"
-    keys = next(distribution.itervalues()).keys()
+    #print(distribution)
+    keys = next(iter(distribution.values())).keys()
     return {k:[k] for k in keys}
 
 
